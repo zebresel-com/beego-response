@@ -4,6 +4,8 @@ This is an additional golang package for the [beego web framework](https://githu
 **Work in progress!**
 Package is used as an example in https://github.com/moehlone/mongodm_example
 
+[![GoDoc](https://godoc.org/github.com/zebresel-com/beego-response?status.svg)](https://godoc.org/github.com/zebresel-com/beego-response)
+
 ### Advantages
 - pagination
 - direct JSON error response
