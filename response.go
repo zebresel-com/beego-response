@@ -250,8 +250,6 @@ func (self *Response) CreatePaging(skip int, limit int, records int, currentReco
 		// Skip exists
 		if strings.Contains(requestURI, PARAM_SKIP+"=") {
 
-			fmt.Println(previousSkip)
-
 			nextUrl = skipReg.ReplaceAllString(nextUrl, PARAM_SKIP+"="+strconv.Itoa(nextSkip))
 			previousUrl = skipReg.ReplaceAllString(previousUrl, PARAM_SKIP+"="+strconv.Itoa(previousSkip))
 
@@ -275,8 +273,6 @@ func (self *Response) CreatePaging(skip int, limit int, records int, currentReco
 		paging.First = fmt.Sprintf("%s?%s=%s&%s=%s", self.context.Request.RequestURI, PARAM_SKIP, strconv.Itoa(0), PARAM_LIMIT, strconv.Itoa(limit))
 		paging.Last = fmt.Sprintf("%s?%s=%s&%s=%s", self.context.Request.RequestURI, PARAM_SKIP, strconv.Itoa(records-limit), PARAM_LIMIT, strconv.Itoa(limit))
 	}
-
-	fmt.Println(skip)
 
 	if hasPrevious {
 		paging.Previous = previousUrl
